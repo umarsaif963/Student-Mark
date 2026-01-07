@@ -9,12 +9,23 @@
 <body>
     <div class="container">
         <h1>Student Marks Manager</h1>
-        <p class="subtitle">Enter the details of 5 students</p>
+        <p class="subtitle">Add students one by one, then show the results</p>
 
-        <form id="marksForm">
-            <div class="student-rows" id="studentRows"></div>
-            <button type="submit" class="btn">Show Results</button>
+        <form id="marksForm" class="add-form">
+            <div class="input-group">
+                <label for="nameInput">Student Name</label>
+                <input type="text" id="nameInput" placeholder="e.g. Ali" required>
+            </div>
+            <div class="input-group">
+                <label for="marksInput">Marks</label>
+                <input type="number" id="marksInput" min="0" max="100" placeholder="e.g. 85" required>
+            </div>
+            <button type="submit" id="addBtn" class="btn btn-add"><span class="plus">+</span> Add</button>
         </form>
+
+        <div id="studentList" class="student-list"></div>
+
+        <button id="resultBtn" class="btn" disabled>Show Result</button>
 
         <div id="results" class="results hidden"></div>
     </div>

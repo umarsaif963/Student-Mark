@@ -36,21 +36,26 @@ h1 {
     font-size: 14px;
 }
 
-.student-row {
+.add-form {
     display: flex;
-    gap: 10px;
-    margin-bottom: 12px;
-    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
 }
 
-.student-row span {
-    width: 16px;
-    color: #999;
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.input-group label {
+    font-size: 12px;
+    color: #777;
     font-weight: bold;
 }
 
-.student-row input {
-    flex: 1;
+.input-group input {
     padding: 10px 12px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -59,26 +64,84 @@ h1 {
     transition: border-color 0.2s;
 }
 
-.student-row input:focus {
+.input-group input:focus {
     border-color: #667eea;
 }
 
 .btn {
-    width: 100%;
-    padding: 12px;
+    padding: 10px 16px;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 8px;
     transition: opacity 0.2s;
+}
+
+.btn-add {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.btn-add .plus {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
 }
 
 .btn:hover {
     opacity: 0.9;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#resultBtn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    font-size: 16px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.student-list {
+    margin-top: 4px;
+}
+
+.student-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #555;
+    animation: fadeIn 0.3s ease;
+}
+
+.student-item:first-child {
+    border-top: 1px solid #eee;
+}
+
+.student-item .name {
+    color: #333;
+    font-weight: bold;
+}
+
+.student-item .marks {
+    background: #f0edff;
+    color: #764ba2;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 12px;
 }
 
 .results {
@@ -113,4 +176,15 @@ h1 {
 
 .hidden {
     display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
